@@ -13,10 +13,10 @@ class Duck:
         self.__fly_behaviour = fly_behaviour
 
     def perform_quack(self):
-        self.__quack_behaviour()
+        self.__quack_behaviour.quack()
 
     def perform_fly(self):
-        self.__fly_behaviour()
+        self.__fly_behaviour.fly()
 
     def display(self):
         print(self._description)

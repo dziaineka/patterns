@@ -2,5 +2,5 @@ class Squeak:
     """Squeak"""
 
     @staticmethod
-    def squeak():
+    def quack():
         print('SSSSqueak')
