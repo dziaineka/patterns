@@ -1,5 +1,5 @@
 import random
-import time
+import asyncio
 
 
 class WeatherData:
@@ -13,6 +13,7 @@ class WeatherData:
     def get_humidity():
         return random.randint(0, 100)
 
+
     @staticmethod
     def get_pressure():
         return random.randint(700, 800)
@@ -24,7 +25,7 @@ class WeatherData:
             self.get_pressure())
         )
 
-    def start_work(self):
+    async def start_work(self):
         while True:
-            time.sleep(random.randint(0, 10))
+            await asyncio.sleep(random.randint(0, 10))
             self.measurements_changed()
