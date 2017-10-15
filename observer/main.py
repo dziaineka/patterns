@@ -1,7 +1,7 @@
+import asyncio
 import WeatherData
 import CurrentState
 import WeatherForecast
-import asyncio
 
 
 async def timer():
