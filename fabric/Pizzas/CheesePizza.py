@@ -1,15 +1,23 @@
 import Pizzas.Pizza as BasePizza
 
 
-class CheesePizza(BasePizza):
-    def __init__(self, ingredient_factory):
-        super.__init__(ingredient_factory)
+class CheesePizza(BasePizza.Pizza):
+    def __init__(self, ingredient_factory, name):
+        super().__init__(ingredient_factory, name)
+        self.description = 'Cheese Pizza'
 
     def prepare(self):
+        print('Preparing:')
         factory = self.ingredient_factory
 
         dough = factory.get_dough()
-        sauce = factory.get_sauce()
-        cheese = factory.get_cheese()
+        self.ingredient_list.append(dough)
 
-        self.mix(dough, sauce, cheese)
+        sauce = factory.get_sauce()
+        self.ingredient_list.append(sauce)
+
+        cheese = factory.get_cheese()
+        self.ingredient_list.append(cheese)
+
+        self.mix(self.ingredient_list)
+        print()

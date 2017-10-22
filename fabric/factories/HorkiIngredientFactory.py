@@ -1,22 +1,28 @@
 import factories.PizzaIngredientFactory as BaseFactory
-import ingredients
+from ingredients import *
 
 
-class HorkiIngredientFactory(BaseFactory):
-    def get_dough(self):
-        return ingredients.Dough('Horki dough')
+class HorkiIngredientFactory(BaseFactory.PizzaIngredientFactory):
+    @staticmethod
+    def get_dough():
+        return Dough.Dough('блин')
 
-    def get_sauce(self):
-        pass
+    @staticmethod
+    def get_sauce():
+        return Sauce.Sauce('мазик')
 
-    def get_veggies(self):
-        pass
+    @staticmethod
+    def get_veggies():
+        return Veggies.Veggies('помидор')
 
-    def get_cheese(self):
-        pass
+    @staticmethod
+    def get_cheese():
+        return Cheese.Cheese('горецкий сыр')
 
-    def get_pepperoni(self):
-        pass
+    @staticmethod
+    def get_pepperoni():
+        return Pepperoni.Pepperoni('сосиски')
 
-    def get_clams(self):
-        pass
+    @staticmethod
+    def get_clams():
+        return Clams.Clams('крабовые палочки')
