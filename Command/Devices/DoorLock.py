@@ -1,3 +1,6 @@
+import asyncio
+
+
 class DoorLock:
     """door lock managing (lock/unlock)"""
 
@@ -6,10 +9,12 @@ class DoorLock:
         self.__unlocked = 1
         self.state = self.__unlocked
 
-    def lock(self):
+    async def lock(self):
+        await asyncio.sleep(2)
         self.state = self.__locked
         print('Door is locked now.')
 
-    def unlock(self):
+    async def unlock(self):
+        await asyncio.sleep(2)
         self.state = self.__unlocked
         print('Door is unlocked now.')

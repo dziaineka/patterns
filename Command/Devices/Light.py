@@ -1,3 +1,6 @@
+import asyncio
+
+
 class Light:
     """switch the light on/off"""
 
@@ -6,10 +9,12 @@ class Light:
         self.__on = 1
         self.state = self.__off
 
-    def switch_off(self):
+    async def switch_off(self):
+        await asyncio.sleep(2)
         self.state = self.__off
         print('Light is switched off now.')
 
-    def switch_on(self):
+    async def switch_on(self):
+        await asyncio.sleep(2)
         self.state = self.__on
         print('Light is switched on now.')

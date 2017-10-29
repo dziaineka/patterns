@@ -1,0 +1,1 @@
+__all__ = ["doorCommands", "lightCommands", "roboCleanerCommands"]
